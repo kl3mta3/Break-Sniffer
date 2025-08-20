@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Breaks</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <div class="title">Break Tracker</div>
+    <button id="toggleBtn" class="btn">Toggle Tracking</button>
+  </div>
+ <div class="row tight">
+  <span class="hint">Shift + Click Toggle button for manual break</span>
+  <span class="spacer"></span>
+  </div>
+<div class="row tight">
+  <span id="statusLabel" class="status enabled">Enabled</span>
+  <span id="liveTimer" class="timer hidden">00m 00s</span>
+</div>
+
+
+  <div class="kpis">
+    <div class="card">
+      <div class="k-title">Today’s Total</div>
+      <div id="kTotal" class="k-value">0h 0m</div>
+    </div>
+	
+	<div class="card">
+		<div class="k-title">Weekly Total</div>
+		<div id="kWeekly" class="k-value">0h 0m</div>
+	</div>
+
+    <div class="card">
+      <div class="k-title">Sessions</div>
+      <div id="kCount" class="k-value">0</div>
+    </div>
+  </div>
+
+  <div class="tableWrap">
+    <table>
+      <thead><tr><th>Start</th><th>End</th><th>Length</th></tr></thead>
+      <tbody id="rows"></tbody>
+      <tfoot><tr><td colspan="2">Total</td><td id="total">0m</td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="footerActions">
+    <button id="resetBtn" class="btn secondary">Reset</button>
+    <button id="reportBtn" class="btn accent">Create Report</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

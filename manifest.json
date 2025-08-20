@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Break Sniffer",
+  "version": "1.0.0",
+  "description": "Logs break start/end and shows status with a styled popup.",
+  "permissions": ["storage", "scripting", "tabs"],
+  "host_permissions": [
+    "https://*.theitsupportcenter.net/*",
+    "http://*.theitsupportcenter.net/*"
+  ],
+  "background": { "service_worker": "sw.js" },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/bt-16.png",
+      "32": "icons/bt-32.png",
+      "48": "icons/bt-48.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/bt-16.png",
+    "32": "icons/bt-32.png",
+    "48": "icons/bt-48.png",
+    "128": "icons/bt-128.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.theitsupportcenter.net/*",
+        "http://*.theitsupportcenter.net/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": [
+        "https://*.theitsupportcenter.net/*",
+        "http://*.theitsupportcenter.net/*"
+      ]
+    }
+  ]
+}
