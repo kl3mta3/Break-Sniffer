@@ -6,7 +6,7 @@
     } catch {}
   };
 
-  // If Break exists now, wrap it
+  // If Break exists now wrap it
   if (typeof window.Break === 'function') {
     const orig = window.Break;
     window.Break = function(...args) {
@@ -15,7 +15,7 @@
     };
   }
 
-  // Ensure future assignments are wrapped, too
+  // Ensure future breaks are wrapped too
   let _val = window.Break;
   Object.defineProperty(window, 'Break', {
     configurable: true,
@@ -28,4 +28,5 @@
       } : v;
     }
   });
+
 })();
