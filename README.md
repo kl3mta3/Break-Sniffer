@@ -6,7 +6,7 @@ Track your break start/end times with a compact, dark-themed popup. Sessions are
 
 ## Features
 
-- Auto-detects break **start/stop** on theitsupportcenter.net
+- Auto-detects break **start/stop**
 - **Today** and **Weekly** totals + session list
 - One-click **Reset** (with confirmation)
 - Manual break: **Shift+Click** the toggle to start/stop a break
